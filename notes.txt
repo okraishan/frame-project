@@ -1,0 +1,16 @@
+MC317450-152-LE:frame-project omareikr$ clear
+MC317450-152-LE:frame-project omareikr$ git init
+Initialized empty Git repository in /Users/omareikr/Desktop/week4/frame-project/.git/
+MC317450-152-LE:frame-project omareikr$ git add .
+MC317450-152-LE:frame-project omareikr$ git commit -m "Initial Commit"
+[main (root-commit) e9ed1c7] Initial Commit
+ 8 files changed, 537 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 README.md
+ create mode 100644 assets/.DS_Store
+ create mode 100644 assets/design-process/01-sketch.pdf
+ create mode 100644 assets/design-process/02-wireframe.pdf
+ create mode 100644 assets/design-process/03-mockup.pdf
+ create mode 100644 index.html
+ create mode 100644 styles.css
+MC317450-152-LE:frame-project omareikr$ 

@@ -1,12 +1,37 @@
 /* ==============================================
    RESET & BASE STYLES
    ============================================== */
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
 
+body {
+   color: #2d2d2d;
+   font-size: 16px;
+   background-color: #fff;
+}
+
+a {
+   color: inherit;
+}
 
 /* ==============================================
    HEADER AREA
    ============================================== */
-
+.page-header {
+   background-color: #1a1a1a;
+   color: #fff;
+   padding: 18px 48px;
+   border-bottom: 1px solid #2a2a2a;
+   text-align: center;
+   position: fixed;
+   width: 100%;
+   left: 0;
+   top: 0;
+   z-index: 100;
+}
 
 /* ==============================================
    HERO SECTION
