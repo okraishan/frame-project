@@ -3,10 +3,11 @@ git add .
 git commit -m "Initial Commit"
 git push
 
-## 
+## Working again on the same prject
 git remote -v
 git pull
 work...
 git add .
 git commit -m "msg"
 git push
+
