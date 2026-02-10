@@ -1,4 +1,4 @@
-# FRAME - Creative Media Magazin
+# FRAME - Creative Media Magazine
 Randome **text**
 
 ##
