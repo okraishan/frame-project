@@ -9,13 +9,13 @@
 
 html {
    font-size: 16px;
+   scroll-behavior: smooth;
 }
 
 body {
    font-family: 'Inter', Arial, sans-serif;
    color: #2d2d2d;
    font-size: 1rem;
-   font-size: 16px;
    background-color: #fff;
 }
 
@@ -44,6 +44,11 @@ a {
 }
 
 .page-header .nav-logo {
+   font-family: 'Syne', Arial, sans-serif;
+   font-size: 1.3rem;
+   text-transform: uppercase;
+   font-weight: 700;
+   letter-spacing: 3px;
    display: inline-block;
    width: 12%;
    text-align: left;
@@ -55,9 +60,28 @@ a {
    text-align: center;
 }
 
+.page-header .main-nav .nav-link {
+   text-decoration: none;
+   margin: 0 12px;
+   color: #999;
+   font-size: 0.9rem;
+}
+
+.page-header .main-nav .nav-link:hover {
+   color: #fff;
+   /* text-decoration: underline; */
+}
+
 .page-header .nav-cta {
    display: inline-block;
-   width: 10%;
+   width: 8%;
+   background-color: #CDEA68;
+   text-decoration: none;
+   color: #1a1a1a;
+   padding: 8px 22px;
+   font-weight: 600;
+   font-size: 0.85rem;
+   border-radius: 20px;
 }
 
 /* ==============================================
