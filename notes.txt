@@ -7,7 +7,18 @@ git push
 git remote -v
 git pull
 work...
-git add .
+gitadd .
 git commit -m "msg"
-git push
+git push 
 
+git https://github.com/okraishan/frame-project.git
+git pull
+work...
+gitadd .
+git commit -m "msg"
+git push 
+
+Google Fonts (https://fonts.google.com/)
+Font Awesome CDN (https://cdnjs.com/libraries/font-awesome)
+Font Awesome Icons (https://fontawesome.com/)
+Free Stock Videos (https://pixabay.com/)
