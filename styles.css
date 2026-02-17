@@ -52,6 +52,8 @@ img {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   flex-wrap: wrap;
+   gap: 10px;
    background-color: #1a1a1a;
    color: #fff;
    padding: 18px 48px;
@@ -76,6 +78,7 @@ img {
 }
 
 .page-header .main-nav {
+
    display: flex;
    gap: 20px;
    /* display: inline-block;
@@ -84,10 +87,15 @@ img {
 }
 
 .page-header .main-nav .nav-link {
-   text-decoration: none;
+   text-decoration: none;   
+   position: relative;
    /* margin: 0 12px; */
    color: #A6A6A6;
    font-size: 0.9rem;
+}
+
+.page-header .main-nav .active {
+   color: var(--main-color);
 }
 
 .page-header .main-nav .nav-link:hover {
@@ -95,22 +103,56 @@ img {
    /* text-decoration: underline; */
 }
 
+.page-header .main-nav .nav-link:focus {
+   outline: 1px solid var(--main-color);
+}
+
+.page-header .main-nav .nav-link::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: -4px;
+   width: 100%;
+   height: 2px;
+   background-color: var(--main-color);
+   transform: scaleX(0);
+   transition: transform 0.5s ease;
+}
+
+.page-header .main-nav .nav-link:hover::after,
+.page-header .main-nav .active:hover::after {
+   transform: scaleX(1);
+}
+
 .page-header .nav-cta {
    /* display: inline-block; */
    /* width: 8%; */
    background-color: var(--main-color);
+   border: 2px solid transparent;
    text-decoration: none;
    color: #1a1a1a;
    padding: 8px 22px;
    font-weight: 600;
    font-size: 0.85rem;
    border-radius: 20px;
+   transition: all 0.5s ease;
+}
+
+.page-header .nav-cta:hover {
+   background-color: transparent;
+   border-color: var(--main-color);
+   color: var(--main-color);
 }
 
 /* ==============================================
    HERO SECTION
    ============================================== */
 .hero-section {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   gap: 2em;
    position: relative;
    background-color: #0a0a0a;
    padding: 160px 80px;
@@ -139,10 +181,13 @@ img {
 }
 
 .hero-section .hero-content {
-   display: inline-block;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   /* display: inline-block; */
    position: relative;
-   vertical-align: middle;
-   width: 55%;
+   /* vertical-align: middle; */
+   /* width: 55%; */
    z-index: 2;
 }
 
@@ -151,7 +196,7 @@ img {
    letter-spacing: 2px;
    text-transform: uppercase;
    color: var(--main-color);
-   margin-bottom: 1rem;
+   /* margin-bottom: 1rem; */
 }
 
 .hero-section .hero-content .hero-title {
@@ -160,7 +205,7 @@ img {
    font-weight: 800;
    line-height: 1.1;
    color: #fff;
-   margin-bottom: 20px;
+   /* margin-bottom: 20px; */
 }
 
 .hero-section .hero-content .hero-subtitle {
@@ -168,11 +213,17 @@ img {
    font-size: 1.05rem;
    font-weight: 300;
    line-height: 1.7;
-   margin-bottom: 32px;
+   /* margin-bottom: 32px; */
    max-width: 480px;
 }
 
+.hero-buttons {
+   display: flex;
+   gap: 10px;
+}
+
 .hero-section .hero-content .hero-button {
+   display: inline-block;
    background-color: var(--main-color);
    color: #1a1a1a;
    padding: 16px 40px;
@@ -213,11 +264,11 @@ img {
 }
 
 .hero-section .hero-image-wrapper {
-   display: inline-block;
+   /* display: inline-block; */
    position: relative;
-   vertical-align: middle;
-   margin-left: 3vw;
-   width: 40%;
+   /* vertical-align: middle; */
+   /* margin-left: 3vw; */
+   /* width: 40%; */
    z-index: 2;
 }
 
@@ -291,3 +342,53 @@ img {
 /* ==============================================
    FOOTER AREA
    ============================================== */
+   
+
+/* ==============================================
+   MEDIA QUERIES
+   ============================================== */
+/* DESKTOP FIRST */
+@media (max-width: 1024px) {
+   
+}
+
+@media (max-width: 768px) {
+   .hero-section {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3em;
+      padding: 160px 80px;
+   }
+   .page-header .main-nav {
+      /* flex-direction: column; */
+   }
+   
+}
+
+@media (max-width: 480px) {
+   .hero-section .hero-content {
+      padding: 6em;
+   }
+}
+
+@media (max-width: 320px) {
+   
+}
+
+/* MOBILE FIRST */
+@media (min-width: 480px) {
+   
+}
+
+@media (min-width: 768px) {
+   
+}
+
+@media (min-width: 1024px) {
+   
+}
+
+@media (min-width: 1200px) {
+   
+}
+
