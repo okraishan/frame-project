@@ -200,13 +200,62 @@ img {
    font-weight: 600;
    font-size: 0.85rem;
    border-radius: 20px;
+   animation: heartbeat 1.5s ease-in-out infinite;
    transition: all var(--transition-base);
+}
+
+@keyframes heartbeat {
+   0%, 100% {
+      transform: scale(1);
+   }
+   10%, 30% {
+      transform: scale(1.1);
+   }
+   20%, 40% {
+      transform: scale(1);
+   }
 }
 
 .page-header .nav-cta:hover {
    background-color: transparent;
    border-color: var(--main-color);
    color: var(--main-color);
+}
+
+/* Ham Menu */
+.ham-checkbox {
+   display: none;
+   /* visibility: hidden; */
+   /* opacity: 0; */
+}
+
+.ham-btn {
+   display: none;
+   flex-direction: column;
+   gap: 5px;
+   cursor: pointer;
+   padding: 4px;
+}
+
+.ham-btn span {
+   display: block;
+   width: 24px;
+   height: 2px;
+   background-color: var(--color-background);
+   transition: all var(--transition-base);
+   transform-origin: center;
+}
+
+.ham-checkbox:checked ~ .ham-btn span:nth-child(1) {
+   transform: translateY(7px) rotate(45deg);
+}
+
+.ham-checkbox:checked ~ .ham-btn span:nth-child(2) {
+   opacity: 0;
+}
+
+.ham-checkbox:checked ~ .ham-btn span:nth-child(3) {
+   transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ==============================================
@@ -267,6 +316,36 @@ img {
    text-transform: uppercase;
    color: var(--main-color);
    /* margin-bottom: 1rem; */
+   overflow: hidden;
+   white-space: nowrap;
+   width: 2ch;
+   border-right: 3px solid var(--main-color);
+
+   animation: 
+      typing 1s steps(24) forwards,
+      blink 0.75s step-end 4,
+      hideCursor 0.1s ease 3s forwards;
+}
+
+@keyframes typing {
+   from {
+      width: 0;
+   }
+   to {
+      width: 100%;
+   }
+}
+
+@keyframes blink {
+   50% {
+      border-color: transparent;
+   }
+}
+
+@keyframes hideCursor {
+   to {
+      border-color: transparent;
+   }
 }
 
 .hero-section .hero-content .hero-title {
@@ -276,6 +355,8 @@ img {
    line-height: 1.1;
    color: var(--color-background);
    /* margin-bottom: 20px; */
+   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+   animation: fadeInUp 0.8s ease forwards;
 }
 
 .hero-section .hero-content .hero-subtitle {
@@ -285,6 +366,7 @@ img {
    line-height: 1.7;
    /* margin-bottom: 32px; */
    max-width: 480px;
+   animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .hero-buttons {
@@ -303,6 +385,7 @@ img {
    font-weight: 600;
    margin-right: 12px;
    transition: transform var(--transition-base), box-shadow var(--transition-base);
+   animation: fadeInUp 0.8s ease 0.5s both;
 }
 
 .hero-section .hero-content .hero-button:hover {
@@ -325,6 +408,7 @@ img {
    font-size: 1rem;
    font-weight: 600;
    transition: all 0.3s ease;
+   animation: fadeInUp 0.8s ease 0.8s both;
 }
 
 .hero-section .hero-content .hero-button-outline:hover {
@@ -340,6 +424,18 @@ img {
    /* margin-left: 3vw; */
    /* width: 40%; */
    z-index: 2;
+   animation: fadeInRight 0.8s ease forwards;
+}
+
+@keyframes fadeInRight {
+   from {
+      opacity: 0;
+      transform: translateX(30px);
+   }
+   to {
+      opacity: 1;
+      transform: translateX(0px);
+   }
 }
 
 .hero-section .hero-image-wrapper::before {
@@ -631,6 +727,19 @@ img {
    ============================================== */
    
 
+   /* ==============================================
+   CSS ANIMATIONS
+   ============================================== */
+   @keyframes fadeInUp {
+      from {
+         opacity: 0;
+         transform: translateY(30px);
+      }
+      to {
+         opacity: 1;
+         transform: translateY(0);
+      }
+   }
 /* ==============================================
    MEDIA QUERIES
    ============================================== */
@@ -640,6 +749,33 @@ img {
 }
 
 @media (max-width: 768px) {
+   /* Show hamburger, hide desktop nav */
+   .ham-btn {
+      display: flex;
+   }
+
+   .main-nav {
+      display: none !important;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+      padding-top: var(--space-md);
+      order: 3;
+   }
+
+   .ham-checkbox:checked ~ .main-nav {
+      display: flex !important;
+   }
+
+   .nav-cta {
+      display: block;
+      text-align: center;
+      margin-top: var(--space-md);
+      width: 100%;
+      order: 4;
+   }
+
+
    .hero-section {
       flex-direction: column;
       justify-content: space-between;
