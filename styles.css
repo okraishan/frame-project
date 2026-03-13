@@ -194,6 +194,12 @@ img {
    position: relative;
 }
 
+.nav-arrow {
+   font-size: 0.6rem;
+   margin-left: 4px;
+   transition: transform var(--transition-base);
+}
+
 .nav-dropdown:hover .nav-arrow {
    transform: rotate(180deg);
 }
