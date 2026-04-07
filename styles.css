@@ -1287,6 +1287,9 @@ details[open] .faq-question:after {
 
 .contact-info {
    flex: 1;
+   animation: revealFromLeft 0.8s ease both;
+   animation-timeline: view();
+   animation-range: entry 0% cover 40%;
 }
 
 .section-label {
@@ -1316,6 +1319,9 @@ details[open] .faq-question:after {
 .contact-form-wrapper {
    flex: 1;
    align-self: flex-end;
+   animation: revealFromRight 0.8s ease 0.15s both;
+   animation-timeline: view();
+   animation-range: entry 0% cover 40%;
 }
 
 .form-label {
@@ -1331,6 +1337,7 @@ details[open] .faq-question:after {
 .form-textarea {
    padding: 14px 16px;
    margin-bottom: 20px;
+   background-color: var(--color-background);
    border: 1px solid var(--color-border);
    border-radius: var(--radius-md);
    width: 100%;
@@ -1338,11 +1345,81 @@ details[open] .faq-question:after {
    font-family: var(--font-body);
 }
 
+.form-button {
+   background-color: var(--color-background-dark);
+   color: var(--main-color);
+   padding: 0.625rem 2.25rem;
+   border-radius: var(--radius-pill);
+   border: none;
+   font-family: var(--font-heading);
+   font-size: var(--font-body);
+   font-weight: 600;
+   cursor: pointer;
+   transition: background-color var(--transition-base),
+               color var(--transition-base);
+}
+
+.form-button:hover {
+   background-color: var(--main-color-dark);
+   color: var(--color-background);
+}
 
 /* ==============================================
    FOOTER AREA
 ============================================== */
-   
+.page-footer {
+   background-color: var(--color-background-dark);
+   color: var(--color-background);
+   padding: 60px 40px 30px;
+}
+
+.footer-columns {
+   display: grid;
+   grid-template-columns: 2fr repeat(3, 1fr);
+   gap: var(--grid-gap-md);
+   max-width: var(--max-width-wide);
+   margin: 0 auto 40px;
+}
+
+.footer-brand {
+   font-family: var(--font-headings);
+   color: var(--color-background);
+   font-size: 1.3rem;
+   font-weight: 700;
+   letter-spacing: 2px;
+   margin-bottom: var(--space-sm);
+}
+
+.footer-tagline {
+   color: var(--main-color);
+   font-size: 0.8rem;
+}
+
+.footer-col-title {
+   font-family: var(--font-headings);
+   font-weight: 700;
+   margin-bottom: 1rem;
+   text-transform: uppercase
+}
+
+.footer-link {
+   display: block;
+   margin-bottom: 1rem;
+   padding-left: 0;
+   color: rgba(255, 255, 255, 0.7);
+   transition: padding-left var(--transition-base),
+               color var(--transition-base);
+}
+
+.footer-link:hover {
+   padding-left: 8px;
+   color: var(--main-color);
+}
+
+.footer-social {
+   display: flex;
+   gap: 10px;
+}
 
 /* ==============================================
    CSS ANIMATIONS
@@ -1443,6 +1520,33 @@ details[open] .faq-question:after {
     transform: scale(1);
   }
 }
+
+@keyframes revealFromLeft {
+   from {
+      transform: translateX(-60px) scale(0.95);
+      opacity: 0;
+      filter: blur(2px);
+   }
+   to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      filter: blur(0);
+   }
+}
+
+@keyframes revealFromRight {
+   from {
+      transform: translateX(60px) scale(0.95);
+      opacity: 0;
+      filter: blur(2px);
+   }
+   to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      filter: blur(0);
+   }
+}
+
 /* ==============================================
    MEDIA QUERIES
    ============================================== */
